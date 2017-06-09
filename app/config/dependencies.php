@@ -2,14 +2,14 @@
 
 $container = $app->getContainer();
 
-$container['MainController'] = function($c) {
-    return new \App\Controllers\MainController($c);
+$container['MainController'] = function($container) {
+    return new \App\Controllers\MainController($container);
 };
 
 // Register component on container
 $container['view'] = function ($container) {
-    $view = new \Slim\Views\Twig(__DIR__ . '/../templates', [
-        'cache' => 'path/to/cache'
+    $view = new \Slim\Views\Twig(__DIR__ . '/../templates/', [
+        'cache' => false
     ]);
 
     // Instantiate and add Slim specific extension

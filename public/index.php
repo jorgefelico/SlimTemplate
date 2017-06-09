@@ -24,5 +24,3 @@ require __DIR__ . "/../app/config/routes.php";
 
 // Run the application
 $app->run();
-
-echo "page loaded";
